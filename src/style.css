@@ -1,0 +1,172 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Arial', sans-serif;
+    color: rgb(43, 43, 43);
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 1rem 4rem;
+    background-color: #f1efe6;
+    z-index: 10;
+}
+
+.logo {
+    width: 10%;
+}
+
+.logo > img {
+    border-radius: 50%;
+    border: solid 1px rgb(43, 43, 43);
+    width: 50%;
+    object-fit: cover;
+}
+
+.nav-btn {
+   margin: 0 2rem; 
+   font-weight: 400;
+   position: relative;
+   padding: 0;
+}
+
+.nav-btn::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: rgb(43, 43, 43);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    transition: ease-in-out 250ms;
+}
+
+.nav-btn:hover {
+    cursor: pointer;
+}
+
+.nav-btn:hover::after {
+    width: 100%;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./assets/images/home-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+}
+
+#content::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(43, 43, 43, 0.511);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f1efe6;
+    z-index: 10;
+}
+
+footer img {
+    width: 20px;
+}
+
+footer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
